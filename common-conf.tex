@@ -1,0 +1,51 @@
+% Title
+\newcommand{\myTitle}{NeuroFedora: a ready to use Free/Open Source platform for computational neuroscientists}
+
+% Common packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo} % add possibly \sigmac` and `osf` options
+\usepackage{eulervm}
+\usepackage{authblk}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage[separate-uncertainty=true,range-phrase=--]{siunitx}
+\usepackage{chronosys}
+\usepackage{subcaption}
+\usepackage{csquotes}
+\usepackage{acronym}
+
+% todonotes for draft
+% https://tex.stackexchange.com/a/178806/11281
+\usepackage{xargs}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+% My notes
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=Orange,backgroundcolor=Orange!25,bordercolor=Orange,#1]{AS:\@ #2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=Aquamarine,backgroundcolor=Aquamarine!25,bordercolor=Aquamarine,#1]{AS:\@ #2}}
+\newcommandx{\updated}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{AS:\@ #2}}
+\newcommandx{\tocite}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{AS:\@ To cite: #2}}
+
+% Review comments: use shades of Red for these
+\newcommandx{\commentAnkursinha}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentLbazan}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentBlackfile}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentZbyszek}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentGicmo}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentSergiopr}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentTerezahl}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentMhough}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentIgnatenkobrain}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+\newcommandx{\commentIlgrad}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=yellow!25,bordercolor=YellowOrange,#1]{AS:\@ #2}}
+
+
+% declare Gaussian function to be used
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfmathdeclarefunction{gaussnew}{4}{%nu, eta, eps, omega
+  \pgfmathparse{(#1*((2*exp(-(((x-((#2+#3)/2))/((#2-#3)/(2*sqrt(-ln(#4/2)))))^2))) -#4))}%chktex 36
+}
+\usetikzlibrary{arrows.meta}
+

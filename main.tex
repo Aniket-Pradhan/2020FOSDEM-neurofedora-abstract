@@ -1,0 +1,71 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\citep}[1]{\cite{#1}}
+%packages and title definition and so on
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[bibstyle=alphabetic,citestyle=alphabetic,natbib=false,backend=biber,sorting=ynt,sortcites=true,autocite=plain,hyperref=true,backref=true,maxbibnames=5,minbibnames=5]{biblatex}
+\addbibresource{masterbib.bib}
+% For includes
+\usepackage{newclude}
+% Common bits between pre-print and e-life versions
+\input{common-conf}
+
+% Changing the number of authors to be shown in references etc
+% https://tex.stackexchange.com/questions/1554/biblatex-displaying-all-authors-of-multi-author-works-in-the-bibliography
+%% Enable before submission. Puts all figures at the end with markers where they should be. Disabling while we draft.
+% \usepackage{endfloat}
+
+% Draft
+\usepackage[firstpage]{draftwatermark}
+
+% Double spacing for the draft
+% \doublespacing%
+
+% line numbers
+\usepackage{lineno}
+\linenumbers%
+
+% Table shading
+\definecolor{table-shade}{gray}{0.8}
+
+% Title
+\date{\today}
+
+% Defined in common-conf.tex
+\title{\myTitle{}}
+\input{authorlist}
+
+\hypersetup{%
+    %draft,	% = no hyperlinking at all (useful in b/w printouts)
+    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,%
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    pdftitle={\myTitle{}},%
+    pdfauthor={\textcopyright\ Ankur Sinha},
+    pdfsubject={},%
+    pdfkeywords={structural plasticity, computational modelling, balanced networks, asynchronous irregular firing},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref}%
+}
+
+\begin{document}
+\maketitle
+\clearpage
+% For draft
+\clearpage
+\listoftodos%
+\clearpage
+\tableofcontents
+
+%% mainbits
+\include*{abstract}
+
+
+\clearpage
+\printbibliography%
+
+\end{document}
