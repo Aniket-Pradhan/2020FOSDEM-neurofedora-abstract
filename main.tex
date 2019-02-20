@@ -18,15 +18,8 @@
 %% Enable before submission. Puts all figures at the end with markers where they should be. Disabling while we draft.
 % \usepackage{endfloat}
 
-% Draft
-\usepackage[firstpage]{draftwatermark}
-
 % Double spacing for the draft
 % \doublespacing%
-
-% line numbers
-\usepackage{lineno}
-\linenumbers%
 
 % Table shading
 \definecolor{table-shade}{gray}{0.8}
@@ -54,18 +47,15 @@
 
 \begin{document}
 \maketitle
-\clearpage
+%% mainbits
+\include*{abstract}
+\printbibliography%
+
 % For draft
 \clearpage
 \listoftodos%
-\clearpage
-\tableofcontents
-
-%% mainbits
-\include*{abstract}
 
 
-\clearpage
-\printbibliography%
+
 
 \end{document}
